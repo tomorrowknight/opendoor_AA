@@ -28,9 +28,9 @@ public class LoginActivity<login> extends Activity {
 	private EditText password = null;
 	private Button loginBtn;
 	private Button resetPwdBtn;
-	public static final String MyPREFERENCES = "MyPrefs" ;
-	public static final String name = "nameKey"; 
-	public static final String pass = "passwordKey"; 
+	public static final String MYPREFERENCES = "MYPREFERENCES";
+	public static final String name = "name"; 
+	public static final String pass = "pass"; 
 	SharedPreferences sharedpreferences;
 
 	@Override
@@ -41,14 +41,14 @@ public class LoginActivity<login> extends Activity {
 		Parse.initialize(this, "iRvjigqtqgGRZT7JZihLP9tsRHUEsuwlNR9uYqC3", "KBfojXYU68Oh4XoFoG3gKHDQYaM2zU6DjIBMT8MZ");
 		//-------+This is my test app's info+--------
 		//Parse.initialize(this, "DAMvJpwZmzYevsSW7JEQ1nf4eZMMuNS9u9zQkyIX", "VW60HdiH3V95qQWt47wZwykwkfNDuMWH3R32U5BP");
-		ParseQuery<ParseObject> query = ParseQuery.getQuery("User");
+		
 		mobileNumber = (EditText)findViewById(R.id.mobileNumber);
 		password = (EditText)findViewById(R.id.password);
 		loginBtn = (Button)findViewById(R.id.loginBtn);
 	}
 
 	protected void onResume() {
-		sharedpreferences=getSharedPreferences(MyPREFERENCES, 
+		sharedpreferences=getSharedPreferences(MYPREFERENCES, 
 				Context.MODE_PRIVATE);
 		if (sharedpreferences.contains(name))
 		{

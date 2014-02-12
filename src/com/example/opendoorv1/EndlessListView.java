@@ -94,7 +94,10 @@ public class EndlessListView extends ListView implements OnScrollListener {
 		
 		this.removeFooterView(footer);
 		
-		adapter.addAll(data);
+		for(int i=0;i<data.size();i++){
+			adapter.add(data.get(i));
+		}
+		//adapter.addAll(data);
 		adapter.notifyDataSetChanged();
 		isLoading = false;
 	}
